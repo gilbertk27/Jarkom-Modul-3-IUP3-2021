@@ -2,7 +2,7 @@
 
 #### Members name:
 * 05111942000025	Gilbert Kurniawan H
-* 05111942000004	RAFI AKBAR RAFSANJANI
+* 05111942000004	Rafi Akbbar Rafsanjani
 * 05111942000020	Drigo Alexander Sihombing
 
 ## no. 1
@@ -36,7 +36,24 @@ INTERFACES="eth0"
 
 ## no. 2
 
-Foosha sebagai DHCP Relay
+Foosha sebagai DHCP Relay.
+
+We set the  Foosha as DHCP relay, the first thing we have to do is install
+```
+// Foosha
+apt-get update
+apt-get install isc-dhcp-relay -y
+```
+
+Then we install by using ```apt-get install isc-dhcp-relay -y```. It will be some settings that we need to input 
+```
+10.39.2.4
+eth1 eth2 eth3
+```
+
+```10.39.2.4``` it means the Ip of our DHCP server Jipangu, ```eth1 eth2 eth3``` it means the interfaces ou DHCP relay that connect to switch 1,2,3.
+
+
 
 ## no. 3
 
