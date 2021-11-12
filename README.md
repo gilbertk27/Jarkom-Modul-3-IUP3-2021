@@ -11,9 +11,27 @@ Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby se
 
 At number 1 we must first install EniesLobby as DNS Server, Jipangu as DHCP server and Water7 as proxy Server.
 ```
-// in EniesLobby
+// EniesLobby
 apt-get update
 apt-get install bind9 -y
+```
+
+```
+// Jipangu
+apt-get update
+apt-get install isc-dhcp-server -y
+```
+
+```
+// in Water7
+apt-get update
+apt-get install squid -y
+```
+
+After that we have to set up the DHCP server so that we can connect to Foosha as mentioned in Problem 2.
+```
+// Jipangu
+INTERFACES="eth0"
 ```
 
 ## no. 2
