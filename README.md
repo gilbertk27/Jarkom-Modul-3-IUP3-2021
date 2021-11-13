@@ -59,6 +59,35 @@ eth1 eth2 eth3
 
 Client yang melalui Switch1 mendapatkan range IP dari [prefix IP].1.20 - [prefix IP].1.99 and [prefix IP].1.150 - [prefix IP].1.169
 
+First we need to setting the subnet in the DHCP server. We edit the file in ```/etc/dhcp/dhcpd.conf```
+
+```
+subnet 10.39.1.0 netmask 255.255.255.0 {
+    range 10.39.1.20 10.39.1.99;
+    range 10.39.1.150 10.39.1.169;
+    option routers 10.39.1.1;
+    option broadcast-address 10.39.1.255;
+    option domain-name-servers 10.39.2.2;
+    default-lease-time 360;
+    max-lease-time 7200;
+}
+
+subnet 10.39.3.0 netmask 255.255.255.0 {
+    range 10.39.3.30 10.39.3.50;
+    option routers 10.39.3.1;
+    option broadcast-address 10.39.3.255;
+    option domain-name-servers 10.39.2.2;
+    default-lease-time 720;
+    max-lease-time 7200;
+}
+
+subnet 10.39.2.0 netmask 255.255.255.0 {
+        option routers 10.39.2.1;
+}
+```
+At this problem we change the switch 1 (10.39.1.0) ramhe to ```0.39.1.20 until 10.39.1.99``` and ```10.39.1.150 until 10.39.1.169```
+
+
 ## no. 4
 
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50
