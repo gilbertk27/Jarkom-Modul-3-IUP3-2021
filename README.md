@@ -87,6 +87,8 @@ subnet 10.39.2.0 netmask 255.255.255.0 {
 ```
 At this problem we change the switch 1 (10.39.1.0) range to ```0.39.1.20 until 10.39.1.99``` and ```10.39.1.150 until 10.39.1.169```
 
+![image](https://user-images.githubusercontent.com/64368640/141644277-889e3b98-4673-4e6a-9787-860e458ede2b.png)
+![image](https://user-images.githubusercontent.com/64368640/141644288-4e025eb5-c2ec-4aeb-b244-1a16ff27ac7d.png)
 
 ## no. 4
 
