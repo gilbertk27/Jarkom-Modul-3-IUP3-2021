@@ -94,17 +94,82 @@ At this problem we change the switch 1 (10.39.1.0) range to ```0.39.1.20 until 1
 
 Client yang melalui Switch3 mendapatkan range IP dari [prefix IP].3.30 - [prefix IP].3.50
 
+### Jipangu
+
+Edit file `/etc/dhcp/dhcpd.conf` dengan menambahkan:
+
+```bash
+    subnet 10.39.3.0 netmask 255.255.255.0 {
+        range 10.39.3.30 10.39.3.50;
+        option routers 10.39.3.1;
+        option broadcast-address 10.39.3.255;
+        option domain-name-servers 10.39.2.2;
+        default-lease-time 720;
+        max-lease-time 7200;
+    }
+```
+
+
+
 ## no. 5
 
 Client mendapatkan DNS dari EniesLobby and client dapat terhubung dengan internet melalui DNS tersebut.
+
+#### Pada EniesLobby
+
+Edit file `/etc/bind/named.conf.options` dan tambahkan
+
+```bash
+    forwarders {
+        "IP nameserver dari Foosha";
+    };
+
+    allow-query{any;};
+```
+
+command bagian
+
+```bash
+    // dnssec-validation auto;
+```
+### Pada Jipangu
+
+Edit file `/etc/dhcp/dhcpd.conf` tambahkan  `option domain-name-servers "IP EniesLobby"` pada `subnet 10.39.1.0` dan `subnet 10.39.3.0`
+
 
 ## no. 6
 
 Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 selama 6 menit seandgkan pada client yang melalui Switch3 selama 12 menit. Dengan waktu maksimal yang dialokasikan untuk peminjaman alamat IP selama 120 menit.
 
+#### Jipangu
+
+Edit file `/etc/dhcp/dhcpd.conf` pada `subnet 10.39.1.0` tambahkan
+
+```bash
+        default-lease-time 360;
+        max-lease-time 7200;
+```
+
+pada `subnet 10.39.3.0` tambahkan
+
+```bash
+        default-lease-time 720;
+        max-lease-time 7200;
+```
+
 ## no. 7
 
 Luffy and Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal yang dimilikinya dengan alamat IP yang tetap dengan IP [prefix IP].3.69
+
+Edit file `/etc/dhcp/dhcpd.conf` dan tambahkan
+
+```bash
+    host Skypie {
+        hardware ethernet "hardware address Skypie";
+        fixed-address 10.39.3.69;
+    }
+```
+kemudian jalankan command `service isc-dhcp-server restart`
 
 ![image](https://user-images.githubusercontent.com/64368640/141644473-6cac30f0-7ba5-44e4-9f36-384ec48f0ca0.png)
 ![image](https://user-images.githubusercontent.com/64368640/141644385-c9e44587-4e58-4576-9a5e-5ed8eba37011.png)
