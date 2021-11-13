@@ -121,8 +121,6 @@ We open `/etc/squid/squid.conf` and edit with
     http_access allow all
 ```
 
-![8.1](imgs/8.1.JPG)
-
 then, we can run command `service squid restart`
 
 #### Skypie
@@ -130,8 +128,9 @@ then, we can run command `service squid restart`
 we first run `apt-get update` and `apt-get install lynx`
 
 We activate the proxy with command `export http_proxy="http://10.39.2.3:5000"`. We also run command `env | grep -i proxy`to check if the proxy already running.
+![image](https://user-images.githubusercontent.com/64368640/141643446-0e0c82f6-72c5-44d8-aab2-53c9043ea2db.png)
+![image](https://user-images.githubusercontent.com/64368640/141643434-b15e0e5d-7ec5-47c2-9a46-0209425b4b65.png)
 
-![8.2](imgs/8.2.JPG)
 
 ## no. 9
 
@@ -146,7 +145,6 @@ We first run `apt-get update` and `apt-get install apache2-utils`
 We then run command `htpasswd -cm /etc/squid/passwd luffybelikapaliup3`, option `c` used to create a new file, while `m` used so that we use MD5 encryption. We also input `luffy_iup3` as the password.
 
 Then, we run `htpasswd -m /etc/squid/passwd zorobelikapaliup3`. After that we input `zoro_iup3` as the password.
-![9.1](imgs/9.1.JPG)
 
 We also edit file `/etc/squid/squid.conf` into
 
@@ -162,9 +160,10 @@ We also edit file `/etc/squid/squid.conf` into
     http_access allow USERS
 ```
 
-![9.2](imgs/9.2.JPG)
-
 We then run command `service squid restart`
+
+![image](https://user-images.githubusercontent.com/64368640/141643476-0bffa71b-7628-410d-9718-b2a301b86f72.png)
+![image](https://user-images.githubusercontent.com/64368640/141643539-747d4598-d48d-4162-b0d2-2aff0c99cb99.png)
 
 ## no. 10
 
@@ -182,7 +181,6 @@ Create a new file named `acl.conf` inside squid folder by typing `nano /etc/squi
     acl AVAILABLE_WORKING time WHFA 00:00-03:00
 ```
 
-![10.1](imgs/10.1.JPG)
 
 After that, we also edit `/etc/squid/squid.conf` into
 
@@ -201,7 +199,9 @@ After that, we also edit `/etc/squid/squid.conf` into
     http_access deny all
 ```
 
-![10.2](imgs/10.2.JPG)
+![image](https://user-images.githubusercontent.com/64368640/141643600-8abb331b-bfbf-4ed7-85b4-77464ab54d71.png)
+![image](https://user-images.githubusercontent.com/64368640/141643607-96d1872d-aeb6-4adb-a04e-e03bf4230f1c.png)
+
 
 After that, run the command `service squid restart`
 
@@ -227,8 +227,6 @@ Edit file `nano /etc/bind/named.conf.local` by typing
     };
 ```
 
-![11.1](imgs/11.1.JPG)
-
 Create a folder name `sunnygo` using command `mkdir /etc/bind/sunnygo`. 
 
 After that, type command `cp /etc/bind/db.local /etc/bind/sunnygo/super.franky.iup3.com`. After that, edit file `nano /etc/bind/sunnygo/super.franky.iup3.com` by filling in
@@ -247,8 +245,6 @@ After that, type command `cp /etc/bind/db.local /etc/bind/sunnygo/super.franky.i
     www     IN      CNAME   super.franky.iup3.com.
 ```
 
-![11.2](imgs/11.2.JPG)
-
 After that, run the command `cp /etc/bind/db.local /etc/bind/sunnygo/3.39.10.in-addr.arpa`. After that, edit file `nano /etc/bind/sunnygo/3.39.10.in-addr.arpa` by typing
 
 ```bash
@@ -264,8 +260,6 @@ After that, run the command `cp /etc/bind/db.local /etc/bind/sunnygo/3.39.10.in-
     69       IN      PTR       super.franky.iup3.com.
 ```
 
-![11.3](imgs/11.3.JPG)
-
 Then, we run command `service bind9 restart`
 
 #### Skypie
@@ -276,8 +270,6 @@ Then we can run command `wget https://raw.githubusercontent.com/FeinardSlim/Prak
 
 After that, we move to directory `/etc/apache2/sites-available`. Then we copy file `000-default.conf` into `super.franky.iup3.com.conf`
 
-![11.4](imgs/11.4.JPG)
-
 Then, we setting file `super.franky.iup3.com.conf` by adding line 
 
 ```bash
@@ -286,13 +278,9 @@ Then, we setting file `super.franky.iup3.com.conf` by adding line
 	DocumentRoot /var/www/super.franky.iup3.com
 ```
 
-![11.5](imgs/11.5.JPG)
-
 We then create another directory named `super.franky.iup3.com` on `/var/www/` by using command `mkdir /var/www/super.franky.iup3.com`. Then we copy from the unzipped `super.franky` folder into `/var/www/super.franky.iup3.com`.
 
 After that, we run command `a2ensite super.franky.iup3.com` and `service apache2 restart`
-
-![11.6](imgs/11.6.JPG)
 
 #### Water7
 
@@ -316,6 +304,6 @@ After that, edit file `/etc/squid/squid.conf` into
     http_access deny all
 ```
 
-![11.7](imgs/11.7.JPG)
-
 Then, we run command `service squid restart`
+
+![image](https://user-images.githubusercontent.com/64368640/141644130-de1a62d6-2993-4e7f-a7ee-e4667cbf5046.png)
