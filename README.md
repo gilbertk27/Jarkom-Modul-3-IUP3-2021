@@ -106,6 +106,7 @@ Lama waktu DHCP server meminjamkan alamat IP kepada Client yang melalui Switch1 
 
 Luffy and Zoro berencana menjadikan Skypie sebagai server untuk jual beli kapal yang dimilikinya dengan alamat IP yang tetap dengan IP [prefix IP].3.69
 
+![image](https://user-images.githubusercontent.com/64368640/141644473-6cac30f0-7ba5-44e4-9f36-384ec48f0ca0.png)
 ![image](https://user-images.githubusercontent.com/64368640/141644385-c9e44587-4e58-4576-9a5e-5ed8eba37011.png)
 
 ## no. 8
