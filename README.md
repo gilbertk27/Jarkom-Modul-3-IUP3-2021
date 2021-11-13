@@ -85,7 +85,7 @@ subnet 10.39.2.0 netmask 255.255.255.0 {
         option routers 10.39.2.1;
 }
 ```
-At this problem we change the switch 1 (10.39.1.0) ramhe to ```0.39.1.20 until 10.39.1.99``` and ```10.39.1.150 until 10.39.1.169```
+At this problem we change the switch 1 (10.39.1.0) range to ```0.39.1.20 until 10.39.1.99``` and ```10.39.1.150 until 10.39.1.169```
 
 
 ## no. 4
