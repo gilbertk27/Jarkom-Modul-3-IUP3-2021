@@ -7,10 +7,6 @@
 
 
 
-## VLSM
-
-![image](https://user-images.githubusercontent.com/73428164/145029305-c3bbd572-488e-43e4-aac5-3f66aba7e9e2.png)
-
 
 ## no. 1
 
