@@ -5,6 +5,13 @@
 * 05111942000004	Rafi Akbbar Rafsanjani
 * 05111942000020	Drigo Alexander Sihombing
 
+
+
+## VLSM
+
+![image](https://user-images.githubusercontent.com/73428164/145029305-c3bbd572-488e-43e4-aac5-3f66aba7e9e2.png)
+
+
 ## no. 1
 
 Luffy bersama Zoro berencana membuat peta tersebut dengan kriteria EniesLobby sebagai DNS Server, Jipangu sebagai DHCP Server, Water7 sebagai Proxy Server
